@@ -74,7 +74,7 @@ public class Main {
         Combo bucketWithWaterToWizard = new Combo(bucketWithWater, wizard, bucket, "Волшебник вскакивает и " +
                 "начинает отряхиваться. Приведя себя в порядок, он благодарит вас за помощь и протягивает вам " +
                 "магический кристалл. Вы выиграли!");
-        while (!(comand.equals("0"))) {
+        while (!(comand.equals("выход"))) {
             if (comand.equals("осмотреться") || comand.equals("1")) {
                 player.lookAround();
             }

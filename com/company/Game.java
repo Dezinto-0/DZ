@@ -5,6 +5,8 @@ import com.company.model.*;
 import java.util.*;
 
 public class Game {
+    private boolean win = false;
+
     public void game() {
         Item bucket = new Item("ведро","На полу валяется ведро. ", Moveable.MOBILE);
         Item chain = new Item("цепь", "Рядом лежит ржавая цепь. ", Moveable.MOBILE);
@@ -102,6 +104,7 @@ public class Game {
             } else if (comand.equals("использовать ведро на волшебник")) {
                 if (playerItems.contains(bucketWithWater)) {
                     player.use(bucketWithWaterToWizard);
+                    win = true;
                     return;
                 } else {
                     player.use(bucketToWizard);
@@ -145,5 +148,9 @@ public class Game {
             }
             comand = scanner.nextLine();
         }
+    }
+
+    public boolean isWin() {
+        return win;
     }
 }
